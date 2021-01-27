@@ -9,18 +9,18 @@
                 if ($vcode!=$row['validationcode']) {
                     set_msg("Validation code does not match database");
                     redirect("reset_2.php");
-                }
+                }reset_2.php
             } else {
                 set_msg("User '{$username}' not found in database");
-                redirect("index.php");
+                redirect("reset_2.php");
             }
         } else {
             set_msg("No validation code included with reset request");
-            redirect("index.php");
+            redirect("reset_2.php");
         }
     } else {
         set_msg("No user included with reset request");
-        redirect("index.php");
+        redirect("reset_2.php");
     }
     if ($_SERVER['REQUEST_METHOD']=="POST") {
         try {
