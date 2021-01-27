@@ -1,4 +1,4 @@
-    <nav id='navcontainer' class="navbar navbar-fixed-top">
+    <nav id='navcontainer' class="navbar navbar-fixed-top" style="height:20px">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">

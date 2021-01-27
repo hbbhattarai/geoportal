@@ -15,7 +15,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
 
@@ -34,6 +33,7 @@
         <link rel="stylesheet" href="src/plugins/Leaflet-pancontrol/L.Control.Pan.css">
         
         
+        
         <script src="src/leaflet.js"></script>
         <script src="src/jquery-3.3.1.min.js"></script>
         <script src="src/plugins/L.Control.Sidebar.js"></script>
@@ -49,9 +49,8 @@
         <script src="src/plugins/Leaflet-pancontrol/L.Control.Pan.js"></script>
     </head>
     <body>
-        <div id="sidebar" class="col-md-3">
-            
-        </div>
+        
+     <div id="sidebar" class="col-md-3"> </div>
         <div id="mapdiv" class="col-md-9"></div>
     </body>
 

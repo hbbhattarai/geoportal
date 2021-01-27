@@ -2,6 +2,9 @@
     height:100vh;
 }
 
+#navcontainer{
+    height:10vh;
+}
 .col-xs-12, .col-xs-6, .col-xs-4 {
     padding:0px;
 }
@@ -29,3 +32,4 @@
     margin-left: -15pt;
     margin-top: -8pt;
 }
+
