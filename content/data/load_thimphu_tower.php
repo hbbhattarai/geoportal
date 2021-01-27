@@ -2,7 +2,7 @@
 
 use function PHPSTORM_META\type;
 
-$dsn = "pgsql:host=localhost; dbname=TCB";
+$dsn = "pgsql:host=localhost; dbname=planinfo";
 $opt = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
