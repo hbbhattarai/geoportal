@@ -53,7 +53,7 @@ $(document).ready(function(){
 // Tower Marker
 
 towermarker = L.icon({
-    iconUrl: '../asset/tower.png',
+    iconUrl: './asset/tower.png',
     iconSize:[15, 30], // size of the icon
 });
 

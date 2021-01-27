@@ -18,7 +18,7 @@
 
             <div class="img-container">
 
-                <img src="../asset/logo.png"></img>
+                <img src="./asset/logo.png"></img>
 
             </div>
 
