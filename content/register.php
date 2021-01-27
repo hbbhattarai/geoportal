@@ -111,7 +111,7 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
-                                                    <input href="http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode}" type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-custom" value="Register Now">
+                                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-custom" value="Register Now">
                                                 </div>
                                             </div>
                                         </div>
