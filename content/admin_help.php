@@ -1,21 +1,21 @@
-<?php include "../includes/init.php" ?>
+<?php include "./init.php" ?>
 <?php 
     if (logged_in()) {
         $username=$_SESSION['username'];
         if (!verify_user_group($pdo, $username, "Admin")) {
             set_msg("User '{$username}' does not have permission to view this page");
-            redirect('../index.php');
+            redirect('./index.php');
         }
     } else {
         set_msg("Please log-in and try again");
-        redirect('../index.php');
+        redirect('./index.php');
     } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include "../includes/header.php" ?>
+    <?php include "./header.php" ?>
     <body>
-        <?php include "../includes/nav.php" ?>
+        <?php include "./nav.php" ?>
 
         <div class="container">
             <?php 
@@ -25,6 +25,6 @@
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. "</p>
         </div> <!--Container-->
     
-        <?php include "../includes/footer.php" ?>
+        <?php include "./footer.php" ?>
     </body>
 </html>

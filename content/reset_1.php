@@ -1,4 +1,4 @@
-<?php include "../includes/init.php"; ?>
+<?php include "./init.php"; ?>
 <?php
     if ($_SERVER['REQUEST_METHOD']=='POST') {
         $username=$_POST['username'];
@@ -13,9 +13,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include "../includes/header.php" ?>
+    <?php include "./header.php" ?>
     <body>
-        <?php include "../includes/nav.php" ?>
+        <?php include "./nav.php" ?>
         <div class="container">
     	    <div class="row">
 			    <div class="col-md-6 col-md-offset-3">
@@ -46,6 +46,6 @@
                 </div>
             </div>
         </div>
-        <?php include "../includes/footer.php" ?>
+        <?php include "./footer.php" ?>
     </body>
 </html>

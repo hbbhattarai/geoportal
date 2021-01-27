@@ -1,13 +1,13 @@
-<?php include "../includes/init.php" ?>
+<?php include "./init.php" ?>
 
 
 
 <!DOCTYPE html>
 
 <html lang="en">
-    <?php include "../includes/header.php" ?>
+    <?php include "./header.php" ?>
         <body>
-            <?php include "../includes/nav.php" ?>
+            <?php include "./nav.php" ?>
 
             <div class="container">
                 <?php 
@@ -34,7 +34,7 @@
             
             <div class="footer-container">
 
-                    <?php include "../includes/footer.php" ?>
+                    <?php include "./footer.php" ?>
 
             </div>
 

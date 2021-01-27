@@ -1,4 +1,4 @@
-<?php include "../includes/init.php" ?>
+<?php include "./init.php" ?>
 <?php 
     if (logged_in()) {
         $username=$_SESSION['username'];
@@ -9,9 +9,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include "../includes/header.php" ?>
+    <?php include "./header.php" ?>
     <body>
-        <?php include "../includes/nav.php" ?>
+        <?php include "./nav.php" ?>
 
         <div class="container">
             <?php 
@@ -52,6 +52,6 @@
             
         </div> <!--Container-->
     
-        <?php include "../includes/footer.php" ?>
+        <?php include "./footer.php" ?>
     </body>
 </html>

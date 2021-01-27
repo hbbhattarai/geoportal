@@ -1,4 +1,4 @@
-<?php include "includes/init.php" ?>
+<?php include "./init.php" ?>
 <?php
     if (isset($_GET['user'])) {
         $user = $_GET['user'];

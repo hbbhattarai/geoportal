@@ -1,4 +1,4 @@
-<?php include "../includes/init.php" ?>
+<?php include "./init.php" ?>
 <?php
     if ($_SERVER['REQUEST_METHOD']=="POST") {
         $fname = $_POST['firstname'];
@@ -60,9 +60,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include "../includes/header.php" ?>
+    <?php include "./header.php" ?>
     <body>
-        <?php include "../includes/nav.php" ?>
+        <?php include "./nav.php" ?>
 
         <div class="container">
             <div class="row">
@@ -123,6 +123,6 @@
                 </div>
             </div>
         </div>
-        <?php include "../includes/footer.php" ?>
+        <?php include "./footer.php" ?>
     </body>
 </html>

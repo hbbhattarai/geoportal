@@ -1,4 +1,4 @@
-<?php include("../includes/init.php");?>
+<?php include("./init.php");?>
 <?php 
     if (logged_in()) {
         $username=$_SESSION['username'];
@@ -13,9 +13,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include "../includes/header.php" ?>
+    <?php include "./header.php" ?>
     <body>
-        <?php include "../includes/nav.php" ?>
+        <?php include "./nav.php" ?>
 
         <div class="container">
             <?php 
@@ -99,7 +99,7 @@
                 <a href='admin_add_page.php' class="btn btn-success">Add Page</a>
             </div>
         </div> <!--Container-->
-        <?php include "../includes/footer.php" ?>
+        <?php include "./footer.php" ?>
         <script>
             $(".confirm-delete").click(function(e){
                 if (!confirm("Are you sure you want to delete this record?")) {
