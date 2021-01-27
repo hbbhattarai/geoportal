@@ -8,19 +8,19 @@
                 $row=return_field_data($pdo, "users", "username", $username);
                 if ($vcode!=$row['validationcode']) {
                     set_msg("Validation code does not match database");
-                    redirect("reset_2.php");
-                }reset_2.php
+                    redirect("index.php");
+                }
             } else {
                 set_msg("User '{$username}' not found in database");
-                redirect("reset_2.php");
+                redirect("index.php");
             }
         } else {
             set_msg("No validation code included with reset request");
-            redirect("reset_2.php");
+            redirect("index.php");
         }
     } else {
         set_msg("No user included with reset request");
-        redirect("reset_2.php");
+        redirect("index.php");
     }
     if ($_SERVER['REQUEST_METHOD']=="POST") {
         try {
