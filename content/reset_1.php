@@ -4,7 +4,7 @@
         $username=$_POST['username'];
         if (count_field_val($pdo, "users", "username", $username)>0) {
             $row=return_field_data($pdo, "users", "username", $username);
-            $body = "Please go to http://{$_SERVER['SERVER_NAME']}/{$root_directory}/reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password";
+            $body = "Please go to http://{$_SERVER['SERVER_NAME']}reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password";
             send_mail($row['email'], "Reset Password", $body, $from_email, $reply_email);
         } else {
             set_msg("User '{$username}' was not found in the database");
@@ -34,7 +34,7 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
-                                                    <input type="submit" name="reset-submit" id="reset-submit" tabindex="4" class="form-control btn btn-custom" value="Reset password">
+                                                    <input type="submit" href="http://{$_SERVER['SERVER_NAME']}reset_2.php?user={$username}&code={$row['validationcode']}" name="reset-submit" id="reset-submit" tabindex="4" class="form-control btn btn-custom" value="Reset password">
                                                 </div>
                                             </div>
                                         </div>

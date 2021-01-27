@@ -40,7 +40,7 @@
                 $user_data = [':firstname'=>$fname, ':lastname'=>$lname, ':username'=>$uname, ':email'=>$email, ':password'=>password_hash($pword, PASSWORD_BCRYPT), ':comments'=>$comments, ':vcode'=>$vcode];
                 $stmnt->execute($user_data);
                 
-                $body = "Please go to  https://geodruk.herokuapp.com/activate.php?user={$uname}&code={$vcode} in order to activate account";
+                $body = "Please go to  http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode} in order to activate account";
                 send_mail($email, "Activate User", $body, $from_email, $reply_email);
             } catch(PDOException $e) {
                 echo "Error: ".$e->getMessage();
@@ -111,7 +111,7 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
-                                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-custom" value="Register Now">
+                                                    <input href="http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode}" type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-custom" value="Register Now">
                                                 </div>
                                             </div>
                                         </div>
