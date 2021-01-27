@@ -8,7 +8,7 @@
                 $row=return_field_data($pdo, "users", "username", $username);
                 if ($vcode!=$row['validationcode']) {
                     set_msg("Validation code does not match database");
-                    redirect("index.php");
+                    redirect("reset_2.php");
                 }
             } else {
                 set_msg("User '{$username}' not found in database");
