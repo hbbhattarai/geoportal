@@ -33,9 +33,9 @@
 									    </div>
                                         <div class="form-group">
                                             <div class="row">
-                                                <div class="col-sm-6 col-sm-offset-3">
-                                                    <input type="submit" name="reset-submit" id="reset-submit" tabindex="4" class="form-control btn btn-custom" value="Reset password">
-                                                </div>
+                                            <div class="text-center">
+                                                        <a href="/reset_2.php" tabindex="5" class="forgot-password">Reset password</a>
+                                                    </div>
                                             </div>
                                         </div>
                                     </form>
