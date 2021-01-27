@@ -42,9 +42,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include "includes/header.php" ?>
+    <?php include "./header.php" ?>
     <body>
-        <?php include "includes/nav.php" ?>
+        <?php include "./nav.php" ?>
 
         <div class="container">
             <div class="row">
