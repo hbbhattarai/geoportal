@@ -1,4 +1,4 @@
-<?php include "includes/init.php" ?>
+<?php include "../includes/init.php" ?>
 <?php
     if ($_GET['user']) {
         if ($_GET['code']) {
@@ -42,9 +42,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include "includes/header.php" ?>
+    <?php include "../includes/header.php" ?>
     <body>
-        <?php include "includes/nav.php" ?>
+        <?php include "../includes/nav.php" ?>
 
         <div class="container">
             <div class="row">
@@ -82,6 +82,6 @@
                 </div>
             </div>
         </div>
-        <?php include "includes/footer.php" ?>
+        <?php include "../includes/footer.php" ?>
     </body>
 </html>

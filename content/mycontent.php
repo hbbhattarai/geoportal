@@ -4,7 +4,7 @@
         $username=$_SESSION['username'];
     } else {
         set_msg("Please log-in and try again");
-        redirect('../index.php');
+        redirect('index.php');
     } 
 ?>
 <!DOCTYPE html>
@@ -35,13 +35,13 @@
                             if ($prev_group!=$row['group_name']) {
                                 echo "<tr class='tbl-group-head'><td>{$row['group_name']}</td><td>{$row['group_descr']}</td><td></td></tr>";
                             }
-                            echo "<tr><td></td><td><a href='content/{$row['url']}'>{$row['page_name']}</a></td><td>{$row['page_descr']}</td></tr>";
+                            echo "<tr><td></td><td><a href='./{$row['url']}'>{$row['page_name']}</a></td><td>{$row['page_descr']}</td></tr>";
                             $prev_group=$row['group_name'];
                         }
                         echo "</table>";
                         $row=return_field_data($pdo, "users", "username", $username);
                         $user_id=$row['id'];
-                        echo "<a class='btn btn-success text-center' href='content/admin_edit_user.php?id={$user_id}'>Edit Profile</a>";
+                        echo "<a class='btn btn-success text-center' href='./admin_edit_user.php?id={$user_id}'>Edit Profile</a>";
                     } else {
                         echo "<h4>No content available for {$username}</h4>";
                     }
@@ -52,6 +52,6 @@
             
         </div> <!--Container-->
     
-        <?php include "includes/footer.php" ?>
+        <?php include "../includes/footer.php" ?>
     </body>
 </html>

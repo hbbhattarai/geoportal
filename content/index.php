@@ -1,13 +1,13 @@
-<?php include "includes/init.php" ?>
+<?php include "../includes/init.php" ?>
 
 
 
 <!DOCTYPE html>
 
 <html lang="en">
-    <?php include "includes/header.php" ?>
+    <?php include "../includes/header.php" ?>
         <body>
-            <?php include "includes/nav.php" ?>
+            <?php include "../includes/nav.php" ?>
 
             <div class="container">
                 <?php 
@@ -18,7 +18,7 @@
 
             <div class="img-container">
 
-                <img src="./asset/logo.png"></img>
+                <img src="../asset/logo.png"></img>
 
             </div>
 
@@ -34,7 +34,7 @@
             
             <div class="footer-container">
 
-                    <?php include "includes/footer.php" ?>
+                    <?php include "../includes/footer.php" ?>
 
             </div>
 

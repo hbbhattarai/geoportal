@@ -14,11 +14,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     <?php
                         if (logged_in()) {
-                            echo "<li><a href='/{$root_directory}/mycontent.php'>{$_SESSION['username']}'s Content</a></li>";
-                            echo "<li><a href='/{$root_directory}/logout.php'>Logout</a></li>";
+                            echo "<li><a href='./mycontent.php'>{$_SESSION['username']}'s Content</a></li>";
+                            echo "<li><a href='./logout.php'>Logout</a></li>";
                         } else {
-                            echo "<li><a href='/{$root_directory}/login.php'>Login</a></li>";
-                            echo "<li><a href='/{$root_directory}/register.php'>Register</a></li>";
+                            echo "<li><a href='./login.php'>Login</a></li>";
+                            echo "<li><a href='./register.php'>Register</a></li>";
                         }
                     ?>
                 </ul>
