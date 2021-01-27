@@ -24,7 +24,7 @@ require __DIR__.'/Dotenv.php';
     //    ];
     //    $pdo = new PDO($dsn, $user, $pass, $opt);
     
-    $root_directory = "geoportal";
+    $root_directory = "geodruk";
     $from_email = "geospatialbhutan@gmail";
     $reply_email = "geospatialbhutan@gmail";
     include "php_functions.php";
