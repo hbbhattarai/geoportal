@@ -1,0 +1,31 @@
+#mapdiv {
+    height:100vh;
+}
+
+.col-xs-12, .col-xs-6, .col-xs-4 {
+    padding:0px;
+}
+
+#divProject {
+    background-color: beige;
+}
+
+.errorMsg {
+    padding:0;
+    text-align:center;
+    background-color:darksalmon;
+}
+
+.text-labels {
+    font-size:16px;
+    font-weight: bold;
+    color:red;
+    background: aqua;
+    text-align: center;
+    display: inline-block;
+    padding: 5pt;
+    border: 3px double darkred;
+    border-radius: 5pt;
+    margin-left: -15pt;
+    margin-top: -8pt;
+}
