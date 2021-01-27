@@ -71,7 +71,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="text-center">
-                                                        <a href="/reset_1.php" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                        <a href="reset_1.php" tabindex="5" class="forgot-password">Forgot Password?</a>
                                                     </div>
                                                 </div>
                                             </div>
