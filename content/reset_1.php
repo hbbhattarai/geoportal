@@ -4,7 +4,8 @@
         $username=$_POST['username'];
         if (count_field_val($pdo, "users", "username", $username)>0) {
             $row=return_field_data($pdo, "users", "username", $username);
-            $body = "Please go to https://geodruk.herokuapp.com/reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password";
+            $body = "user={$username}&code={$row['validationcode']}";
+            redirect('reset_2.php');
             send_mail($row['email'], "Reset Password", $body, $from_email, $reply_email);
         } else {
             set_msg("User '{$username}' was not found in the database");
