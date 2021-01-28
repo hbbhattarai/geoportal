@@ -1,6 +1,6 @@
 <?php include "includes/init.php" ?>
 <?php
-    if ($_GET['user']) {
+    if ($_GET['username']) {
         if ($_GET['code']) {
             $username=$_GET['user'];
             $vcode=$_GET['code'];
