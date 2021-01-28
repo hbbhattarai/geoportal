@@ -1,6 +1,6 @@
-<?php include "includes/init.php" ?>
+<?php include "./init.php" ?>
 <?php
-    if ($_GET['username']) {
+    if ($_GET['user']) {
         if ($_GET['code']) {
             $username=$_GET['user'];
             $vcode=$_GET['code'];
