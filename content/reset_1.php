@@ -1,11 +1,23 @@
 <?php include "./init.php"; ?>
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+require '../vendor/autoload.php';
+
     if ($_SERVER['REQUEST_METHOD']=='POST') {
         $username=$_POST['username'];
         if (count_field_val($pdo, "users", "username", $username)>0) {
             $row=return_field_data($pdo, "users", "username", $username);
-            $body = "Please go to http://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password";
-            mail($row['email'], "Reset Password", $body, $from_email, $reply_email);
+            $mail = new PHPMailer();
+            $mail->isSMTP();
+            $mail->Host = gethostname();
+            $mail->SMTPAuth = true;
+            $mail->Username = 'geospatialbhutan@gmail.com';
+            $mail->Password = 'kali@339456';
+            $mail->setFrom('geospatialbhutan@gmail.com');
+            $mail->addAddress($row['email']);
+            $mail-> body = "Please go to http://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password";
+            $mail->send();
         } else {
             set_msg("User '{$username}' was not found in the database");
         }

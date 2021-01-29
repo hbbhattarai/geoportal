@@ -39,9 +39,17 @@
                 $stmnt = $pdo->prepare($sql);
                 $user_data = [':firstname'=>$fname, ':lastname'=>$lname, ':username'=>$uname, ':email'=>$email, ':password'=>password_hash($pword, PASSWORD_BCRYPT), ':comments'=>$comments, ':vcode'=>$vcode];
                 $stmnt->execute($user_data);
-                
-                $body = "Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode} in order to activate account";
-                mail($email, "Activate User", $body, $from_email, $reply_email);
+                $row=return_field_data($pdo, "users", "username", $username);
+                $mail = new PHPMailer();
+                $mail->isSMTP();
+                $mail->Host = gethostname();
+                $mail->SMTPAuth = true;
+                $mail->Username = 'geospatialbhutan@gmail.com';
+                $mail->Password = 'kali@339456';
+                $mail->setFrom('geospatialbhutan@gmail.com');
+                $mail->addAddress($row['email']);
+                $mail-> body = "Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode} in order to activate account";;
+                $mail->send();
             } catch(PDOException $e) {
                 echo "Error: ".$e->getMessage();
             }
