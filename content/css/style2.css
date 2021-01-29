@@ -14,7 +14,7 @@ a:hover {
     color:brown;
 }
 .btn-custom {
-    color:saddlebrown;
+    color:whitesmoke;
     background-color: cadetblue;
 }
 nav a:visited {
@@ -22,7 +22,7 @@ nav a:visited {
 }
 
 nav a:hover {
-    color:cadetblue;
+    color:rgb(215, 232, 233);
 }
 
 .img-container{
@@ -47,7 +47,7 @@ nav a:hover {
     font-weight: bold;
     font-family: sans-serif;
     font-size: 14px;
-    background-color:cadetblue;
+    background-color:yellowgreen;
 }
 
 .tbl-group-head {

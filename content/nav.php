@@ -7,11 +7,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <span class="navbar-brand">ZHI-CHAR INFORMATION SYSTEM</span>
+                <span class="navbar-brand"> GEOSPATIAL BHUTAN | <a>Druk Geo-Portal</a></span>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 
                 <ul class="nav navbar-nav navbar-right">
+                     <li><a href="contact.php">Contact</a></li>
                     <?php
                         if (logged_in()) {
                             echo "<li><a href='./mycontent.php'>{$_SESSION['username']}'s Content</a></li>";
@@ -21,6 +22,8 @@
                             echo "<li><a href='./register.php'>Register</a></li>";
                         }
                     ?>
+                         
+                   
                 </ul>
             </div>
         </div>

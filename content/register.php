@@ -41,7 +41,7 @@
                 $stmnt->execute($user_data);
                 
                 $body = "Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode} in order to activate account";
-                send_mail($email, "Activate User", $body, $from_email, $reply_email);
+                @mail($email, "Activate User", $body, $from_email, $reply_email);
             } catch(PDOException $e) {
                 echo "Error: ".$e->getMessage();
             }

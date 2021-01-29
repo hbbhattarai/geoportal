@@ -10,7 +10,7 @@ var lyrImagery;
 var lyrOutdoors;
 
 // Additional Layers
-var ThimphuTower;
+var geowgcenters;
 
 // Styling
 
@@ -52,24 +52,30 @@ $(document).ready(function(){
     mymap.addLayer(lyrOSM);
 // Tower Marker
 
-towermarker = L.icon({
+geowgcentermarker = L.icon({
     iconUrl: './asset/geowgcenters.png',
     iconSize:[15, 30], // size of the icon
 });
 
 // Adding Geojson from postgres
 
-    $.ajax({url:'./data/load_thimphu_tower.php',
+    $.ajax({url:'./data/load_geowg_center.php',
         success: function(response){
-          jsnThimphuTower = JSON.parse(response);
-          ThimphuTower = L.geoJSON(jsnThimphuTower, {
+          jsngeowgcenters = JSON.parse(response);
+          geowgcenters = L.geoJSON(jsngeowgcenters, {
             pointToLayer: function (feature, latlng) {
-                return L.marker(latlng, {icon: towermarker});
+                return L.marker(latlng, {icon: geowgcentermarker});
             },
             onEachFeature(feature, layer) {
                 layer.on({
                     click: function populate(){
-                        document.getElementById('sidebar').innerHTML = 'Name : ' + feature.properties.geog_cente + '</br>'+ 'Dzongkhag : ' + feature.properties.dzongkhag +'</br>' + 'Geowg : ' + feature.properties.geog + '</br>' + 'Village: ' + feature.properties.village + '</br>' + 'Gup Name : ' + feature.properties.gup_s_name + '</br>' +'Electricity Availability/Type : ' + feature.properties.electricit + '</br>' + 'Computer Availability: ' + feature.properties.computer;
+                        document.getElementById('sidebar').innerHTML = '<strong> Name : </strong>'  + feature.properties.geog_cente + '</br>'
+                                                                        + '<strong> Dzongkhag : </strong>' + feature.properties.dzongkhag +'</br>' 
+                                                                        + '<strong> Geowg : </strong>' + feature.properties.geog + '</br>' 
+                                                                        + '<strong> Village:  </strong>' + feature.properties.village + '</br>' 
+                                                                        + '<strong> Gup Name :  </strong>' + feature.properties.gup_s_name + '</br>'
+                                                                        +'<strong> Electricity Availability/Type :   </strong>'  + feature.properties.electricit + '</br>' 
+                                                                        + '<strong> Computer Availability: </strong>'  + feature.properties.computer;
                 },
 
                 });
@@ -78,7 +84,7 @@ towermarker = L.icon({
         
        
 
-        ctlLayers.addOverlay(ThimphuTower, 'Tele-communication Tower') /// adding to layer control
+        ctlLayers.addOverlay(geowgcenters, 'Geowg Centers') /// adding to layer control
         
         },
 

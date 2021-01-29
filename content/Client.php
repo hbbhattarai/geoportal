@@ -50,7 +50,13 @@
     </head>
     <body>
         
-     <div id="sidebar" class="col-md-3"> </div>
+     <div class="col-md-3"> 
+
+               <h3 style=" text-align:center; font-size:normal; font-family:sans-serif;"> INFORMATION </h3>
+
+     <div id="sidebar" style="letter-spacing:2px; font-size:normal; font-family:sans-serif;"> </div>
+
+     </div>
         <div id="mapdiv" class="col-md-9"></div>
     </body>
 

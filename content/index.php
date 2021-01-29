@@ -23,7 +23,7 @@
             </div>
 
             <header>
-                <h1 class="text-center">About Plan Information System</h1>
+                <h1 class="text-center">About Druk Geo-Portal</h1>
             </header>
 
             <div class="text-container">
