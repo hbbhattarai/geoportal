@@ -40,15 +40,21 @@
                 $user_data = [':firstname'=>$fname, ':lastname'=>$lname, ':username'=>$uname, ':email'=>$email, ':password'=>password_hash($pword, PASSWORD_BCRYPT), ':comments'=>$comments, ':vcode'=>$vcode];
                 $stmnt->execute($user_data);
                 $row=return_field_data($pdo, "users", "username", $username);
-                $mail = new PHPMailer();
+                $mail = new PHPMailer(true);
                 $mail->isSMTP();
-                $mail->Host = gethostname();
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                $mail->Host = 'smtp.gmail.com';
+                $mail->Port = 587;
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->SMTPAuth = true;
+                $mail->isHTML(true);
                 $mail->Username = 'geospatialbhutan@gmail.com';
                 $mail->Password = 'kali@339456';
                 $mail->setFrom('geospatialbhutan@gmail.com');
                 $mail->addAddress($row['email']);
-                $mail-> body = "Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode} in order to activate account";;
+                $mail->Subject = 'Account Activation';
+                $mail->msgHTML("Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$username}&code={$row['validationcode']} in order to reset your password");
+                $mail->AltBody = "Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$username}&code={$row['validationcode']} in order to reset your password";
                 $mail->send();
             } catch(PDOException $e) {
                 echo "Error: ".$e->getMessage();
