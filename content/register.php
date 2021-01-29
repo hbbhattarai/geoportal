@@ -1,5 +1,10 @@
 <?php include "./init.php" ?>
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+require '../vendor/autoload.php';
+
     if ($_SERVER['REQUEST_METHOD']=="POST") {
         $fname = $_POST['firstname'];
         $lname = $_POST['lastname'];
@@ -39,6 +44,7 @@
                 $stmnt = $pdo->prepare($sql);
                 $user_data = [':firstname'=>$fname, ':lastname'=>$lname, ':username'=>$uname, ':email'=>$email, ':password'=>password_hash($pword, PASSWORD_BCRYPT), ':comments'=>$comments, ':vcode'=>$vcode];
                 $stmnt->execute($user_data);
+                $username=$_POST['username'];
                 $row=return_field_data($pdo, "users", "username", $username);
                 $mail = new PHPMailer(true);
                 $mail->isSMTP();
@@ -53,8 +59,8 @@
                 $mail->setFrom('geospatialbhutan@gmail.com');
                 $mail->addAddress($row['email']);
                 $mail->Subject = 'Account Activation';
-                $mail->msgHTML("Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$username}&code={$row['validationcode']} in order to reset your password");
-                $mail->AltBody = "Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$username}&code={$row['validationcode']} in order to reset your password";
+                $mail->msgHTML("Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode} in order to reset your password");
+                $mail->AltBody = "Please go to http://{$_SERVER['SERVER_NAME']}/activate.php?user={$uname}&code={$vcode} in order to reset your password";
                 $mail->send();
             } catch(PDOException $e) {
                 echo "Error: ".$e->getMessage();
