@@ -49,7 +49,7 @@ $(document).ready(function(){
     lyrTopo = L.tileLayer.provider('OpenTopoMap');
     lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
     lyrWatercolor = L.tileLayer.provider('Stamen.Watercolor');
-    mymap.addLayer(lyrImagery);
+    mymap.addLayer(lyrOSM);
 // Tower Marker
 
 towermarker = L.icon({

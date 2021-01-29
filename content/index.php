@@ -27,9 +27,12 @@
             </header>
 
             <div class="text-container">
-                <p> Planning information systems (PIS) are tools for supporting the various information processes that are conducted in spatial planning processes. 
-                    In developing these systems, different aspects is considered regarding the characteristics of the spatial problems, the required processes to solve these problems and the main feature of the information that is needed, processed or produced in these processes. 
-                    In addition, this information is processed and produced by humans. Hence, the characteristics of the human processing of information in general and especially in planning and decision-making should also be considered. </p>
+            <p>Geoportal are important for effective use of geographic information systems (GIS) and a key element of Spatial Data Infrastructure.
+                </br>
+                Druk geoportal is a type of web portal used to view geographic information and associated geographic services via the Internet.
+                </br>
+                This portal allows users to enhance the awareness about geospatial, and improve access to geospatial information and different applications.</p>
+                </br>
             </div>
             
             <div class="footer-container">
