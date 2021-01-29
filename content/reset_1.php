@@ -21,10 +21,15 @@ require '../vendor/autoload.php';
             $mail->Password ='kali@339456';
             $mail->setFrom('geospatialbhutan@gmail.com');
             $mail->addAddress($row['email']);
-            $mail->Subject = 'Account Activation';
+            $mail->Subject = 'Reset Password';
             $mail->msgHTML("Please go to http://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password");
             $mail-> body = "Please go to http://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password";
-            $mail->send();
+            if (!$mail->send()) {
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            } else {
+                echo 'Message sent!';
+            }
+
         } else {
             set_msg("User '{$username}' was not found in the database");
         }
