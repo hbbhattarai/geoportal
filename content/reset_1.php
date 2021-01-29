@@ -24,11 +24,7 @@ require '../vendor/autoload.php';
             $mail->Subject = 'Reset Password';
             $mail->msgHTML("Please go to http://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password");
             $mail-> body = "Please go to http://{$_SERVER['SERVER_NAME']}/reset_2.php?user={$username}&code={$row['validationcode']} in order to reset your password";
-            if (!$mail->send()) {
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
-            } else {
-                echo 'Message sent!';
-            }
+            $mail->send();
 
         } else {
             set_msg("User '{$username}' was not found in the database");
@@ -43,9 +39,6 @@ require '../vendor/autoload.php';
         <div class="container">
     	    <div class="row">
 			    <div class="col-md-6 col-md-offset-3">
-                    <?php 
-                        show_msg();
-                    ?>
 				    <div class="panel panel-login">
 					    <div class="panel-body">
 						    <div class="row">
