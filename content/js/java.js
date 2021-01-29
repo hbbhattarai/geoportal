@@ -53,7 +53,7 @@ $(document).ready(function(){
 // Tower Marker
 
 towermarker = L.icon({
-    iconUrl: './asset/tower.png',
+    iconUrl: './asset/geowgcenters.png',
     iconSize:[15, 30], // size of the icon
 });
 
@@ -69,7 +69,7 @@ towermarker = L.icon({
             onEachFeature(feature, layer) {
                 layer.on({
                     click: function populate(){
-                        document.getElementById('sidebar').innerHTML = 'Name : ' + feature.properties.identity + '</br>'+ 'Power Supply : ' + feature.properties.power_supp + '</br>' + 'Battery Type : ' + feature.properties.batteries + '</br>' + 'DG SETS  : ' + feature.properties.dg_sets;
+                        document.getElementById('sidebar').innerHTML = 'Name : ' + feature.properties.geog_cente + '</br>'+ 'Dzongkhag : ' + feature.properties.dzongkhag +'</br>' + 'Geowg : ' + feature.properties.geog + '</br>' + 'Village: ' + feature.properties.village + '</br>' + 'Gup Name : ' + feature.properties.gup_s_name + '</br>' +'Electricity Availability/Type : ' + feature.properties.electricit + '</br>' + 'Computer Availability: ' + feature.properties.computer;
                 },
 
                 });

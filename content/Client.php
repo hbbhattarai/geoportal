@@ -15,7 +15,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <meta charset="UTF-8">
 
         <link rel="stylesheet" href="src/leaflet.css">
