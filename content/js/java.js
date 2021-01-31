@@ -53,7 +53,7 @@ $(document).ready(function(){
     lyrTopo = L.tileLayer.provider('OpenTopoMap');
     lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
     lyrWatercolor = L.tileLayer.provider('Stamen.Watercolor');
-    mymap.addLayer(lyrOSM);
+    mymap.addLayer(lyrImagery);
 // Tower Marker
 
 geowgcentermarker = L.icon({
