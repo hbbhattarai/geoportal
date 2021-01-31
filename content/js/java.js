@@ -11,7 +11,11 @@ var lyrOutdoors;
 
 // Additional Layers
 var geowgcenters;
-
+var rivers;
+var chiwog;
+var dzongkhag;
+var geowg;
+var thromde;
 // Styling
 
 var towermarker;
@@ -57,7 +61,7 @@ geowgcentermarker = L.icon({
     iconSize:[15, 30], // size of the icon
 });
 
-// Adding Geojson from postgres
+// Adding Geojson from postgres geowg center
 
     $.ajax({url:'./data/load_geowg_center.php',
         success: function(response){
@@ -93,6 +97,184 @@ geowgcentermarker = L.icon({
         }
     });
 
+    // Adding Geojson from postgres chiwog
+
+    $.ajax({url:'./data/load_chiwog.php',
+        success: function(response){
+          jsnchiwog = JSON.parse(response);
+          chiwog = L.geoJSON(jsnchiwog, {
+            pointToLayer: function (feature, latlng) {
+                
+            },
+            onEachFeature(feature, layer) {
+                layer.on({
+                    click: function populate(){
+                        document.getElementById('sidebar').innerHTML = '<strong> Name : </strong>'  + feature.properties.geog_cente + '</br>'
+                                                                        + '<strong> Dzongkhag : </strong>' + feature.properties.dzongkhag +'</br>' 
+                                                                        + '<strong> Geowg : </strong>' + feature.properties.geog + '</br>' 
+                                                                        + '<strong> Village:  </strong>' + feature.properties.village + '</br>' 
+                                                                        + '<strong> Gup Name :  </strong>' + feature.properties.gup_s_name + '</br>'
+                                                                        +'<strong> Electricity Availability/Type :   </strong>'  + feature.properties.electricit + '</br>' 
+                                                                        + '<strong> Computer Availability: </strong>'  + feature.properties.computer;
+                },
+
+                });
+              },
+        }).addTo(mymap);
+        
+       
+
+        ctlLayers.addOverlay(chiwog, 'Chiwogs') /// adding to layer control
+        
+        },
+
+        error: function(xhr, status, error){
+            alert('ERROR:'+ error);
+        }
+    });
+// Adding Geojson from postgres dzongkhag
+
+$.ajax({url:'./data/load_dzongkhag.php',
+    success: function(response){
+        jsndzongkhag = JSON.parse(response);
+        dzongkhag = L.geoJSON(jsndzongkhag, {
+        pointToLayer: function (feature, latlng) {
+            
+        },
+        onEachFeature(feature, layer) {
+            layer.on({
+                click: function populate(){
+                    document.getElementById('sidebar').innerHTML = '<strong> Name : </strong>'  + feature.properties.geog_cente + '</br>'
+                                                                    + '<strong> Dzongkhag : </strong>' + feature.properties.dzongkhag +'</br>' 
+                                                                    + '<strong> Geowg : </strong>' + feature.properties.geog + '</br>' 
+                                                                    + '<strong> Village:  </strong>' + feature.properties.village + '</br>' 
+                                                                    + '<strong> Gup Name :  </strong>' + feature.properties.gup_s_name + '</br>'
+                                                                    +'<strong> Electricity Availability/Type :   </strong>'  + feature.properties.electricit + '</br>' 
+                                                                    + '<strong> Computer Availability: </strong>'  + feature.properties.computer;
+            },
+
+            });
+            },
+    }).addTo(mymap);
+    
+    
+
+    ctlLayers.addOverlay(dzongkhag, 'Dzongkhags') /// adding to layer control
+    
+    },
+
+    error: function(xhr, status, error){
+        alert('ERROR:'+ error);
+    }
+});
+
+// Adding Geojson from postgres rivers
+
+$.ajax({url:'./data/load_rivers.php',
+    success: function(response){
+        jsnrivers = JSON.parse(response);
+        rivers = L.geoJSON(jsnrivers, {
+        pointToLayer: function (feature, latlng) {
+            
+        },
+        onEachFeature(feature, layer) {
+            layer.on({
+                click: function populate(){
+                    document.getElementById('sidebar').innerHTML = '<strong> Name : </strong>'  + feature.properties.geog_cente + '</br>'
+                                                                    + '<strong> Dzongkhag : </strong>' + feature.properties.dzongkhag +'</br>' 
+                                                                    + '<strong> Geowg : </strong>' + feature.properties.geog + '</br>' 
+                                                                    + '<strong> Village:  </strong>' + feature.properties.village + '</br>' 
+                                                                    + '<strong> Gup Name :  </strong>' + feature.properties.gup_s_name + '</br>'
+                                                                    +'<strong> Electricity Availability/Type :   </strong>'  + feature.properties.electricit + '</br>' 
+                                                                    + '<strong> Computer Availability: </strong>'  + feature.properties.computer;
+            },
+
+            });
+            },
+    }).addTo(mymap);
+    
+    
+
+    ctlLayers.addOverlay(rivers, 'Rivers') /// adding to layer control
+    
+    },
+
+    error: function(xhr, status, error){
+        alert('ERROR:'+ error);
+    }
+});
+
+// Adding Geojson from postgres thromde
+
+$.ajax({url:'./data/load_thromde.php',
+    success: function(response){
+        jsnthromde = JSON.parse(response);
+        thromde = L.geoJSON(jsnthromde, {
+        pointToLayer: function (feature, latlng) {
+            
+        },
+        onEachFeature(feature, layer) {
+            layer.on({
+                click: function populate(){
+                    document.getElementById('sidebar').innerHTML = '<strong> Name : </strong>'  + feature.properties.geog_cente + '</br>'
+                                                                    + '<strong> Dzongkhag : </strong>' + feature.properties.dzongkhag +'</br>' 
+                                                                    + '<strong> Geowg : </strong>' + feature.properties.geog + '</br>' 
+                                                                    + '<strong> Village:  </strong>' + feature.properties.village + '</br>' 
+                                                                    + '<strong> Gup Name :  </strong>' + feature.properties.gup_s_name + '</br>'
+                                                                    +'<strong> Electricity Availability/Type :   </strong>'  + feature.properties.electricit + '</br>' 
+                                                                    + '<strong> Computer Availability: </strong>'  + feature.properties.computer;
+            },
+
+            });
+            },
+    }).addTo(mymap);
+    
+    
+
+    ctlLayers.addOverlay(thromde, 'Thromdes') /// adding to layer control
+    
+    },
+
+    error: function(xhr, status, error){
+        alert('ERROR:'+ error);
+    }
+});
+
+// Adding Geojson from postgres geowg
+
+$.ajax({url:'./data/load_geowg.php',
+    success: function(response){
+        jsngeowg = JSON.parse(response);
+        geowg = L.geoJSON(jsngeowg, {
+        pointToLayer: function (feature, latlng) {
+            
+        },
+        onEachFeature(feature, layer) {
+            layer.on({
+                click: function populate(){
+                    document.getElementById('sidebar').innerHTML = '<strong> Name : </strong>'  + feature.properties.geog_cente + '</br>'
+                                                                    + '<strong> Dzongkhag : </strong>' + feature.properties.dzongkhag +'</br>' 
+                                                                    + '<strong> Geowg : </strong>' + feature.properties.geog + '</br>' 
+                                                                    + '<strong> Village:  </strong>' + feature.properties.village + '</br>' 
+                                                                    + '<strong> Gup Name :  </strong>' + feature.properties.gup_s_name + '</br>'
+                                                                    +'<strong> Electricity Availability/Type :   </strong>'  + feature.properties.electricit + '</br>' 
+                                                                    + '<strong> Computer Availability: </strong>'  + feature.properties.computer;
+            },
+
+            });
+            },
+    }).addTo(mymap);
+    
+    
+
+    ctlLayers.addOverlay(geowg, 'Geowgs') /// adding to layer control
+    
+    },
+
+    error: function(xhr, status, error){
+        alert('ERROR:'+ error);
+    }
+});
 
    
 // Setup Layer Control 

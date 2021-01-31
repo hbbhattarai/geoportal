@@ -12,6 +12,7 @@
             <div id="navbar" class="collapse navbar-collapse">
                 
                 <ul class="nav navbar-nav navbar-right">
+                     <li><a href="public.php">Portal</a></li>
                      <li><a href="contact.php">Contact</a></li>
                     <?php
                         if (logged_in()) {
