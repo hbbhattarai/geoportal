@@ -34,7 +34,7 @@ $(document).ready(function(){
     
     //  Map Initialization 
     
-    mymap = L.map('mapdiv', {center:[27,90], zoom:9, attributionControl:false});
+    mymap = L.map('mapdiv', {center:[27.5,90.4], zoom:9, attributionControl:false});
 
     // Sidebar
     
