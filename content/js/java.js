@@ -34,7 +34,7 @@ $(document).ready(function(){
     
     //  Map Initialization 
     
-    mymap = L.map('mapdiv', {center:[27.5,90.4], zoom:9, attributionControl:false});
+    mymap = L.map('mapdiv', {center:[27.5,90.4], zoom:8, attributionControl:false});
 
     // Sidebar
     
@@ -53,7 +53,7 @@ $(document).ready(function(){
     lyrTopo = L.tileLayer.provider('OpenTopoMap');
     lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
     lyrWatercolor = L.tileLayer.provider('Stamen.Watercolor');
-    mymap.addLayer(lyrImagery);
+    mymap.addLayer(lyrOSM);
 // Tower Marker
 
 geowgcentermarker = L.icon({
@@ -84,7 +84,7 @@ geowgcentermarker = L.icon({
 
                 });
               },
-        }).addTo(mymap);
+        });
         
        
 
@@ -103,6 +103,9 @@ geowgcentermarker = L.icon({
         success: function(response){
           jsnchiwog = JSON.parse(response);
           chiwog = L.geoJSON(jsnchiwog, {
+              style:function(feature){
+                return {color: "black", weight:"0.1", dashArray: "3",};
+              },
             pointToLayer: function (feature, latlng) {
                 
             },
@@ -120,7 +123,7 @@ geowgcentermarker = L.icon({
 
                 });
               },
-        }).addTo(mymap);
+        });
         
        
 
@@ -138,6 +141,11 @@ $.ajax({url:'./data/load_dzongkhag.php',
     success: function(response){
         jsndzongkhag = JSON.parse(response);
         dzongkhag = L.geoJSON(jsndzongkhag, {
+
+        style:function(feature){
+            return {color: "black", weight:"1", dashArray: "10",};
+        },
+
         pointToLayer: function (feature, latlng) {
             
         },
@@ -155,7 +163,7 @@ $.ajax({url:'./data/load_dzongkhag.php',
 
             });
             },
-    }).addTo(mymap);
+    });
     
     
 
@@ -174,6 +182,9 @@ $.ajax({url:'./data/load_rivers.php',
     success: function(response){
         jsnrivers = JSON.parse(response);
         rivers = L.geoJSON(jsnrivers, {
+        style:function(feature){
+            return {color: "blue", weight:"1.5"};
+            },
         pointToLayer: function (feature, latlng) {
             
         },
@@ -191,7 +202,7 @@ $.ajax({url:'./data/load_rivers.php',
 
             });
             },
-    }).addTo(mymap);
+    });
     
     
 
@@ -210,6 +221,9 @@ $.ajax({url:'./data/load_thromde.php',
     success: function(response){
         jsnthromde = JSON.parse(response);
         thromde = L.geoJSON(jsnthromde, {
+        style:function(feature){
+            return {color: "black", weight:"1", dashArray: "10",};
+            },
         pointToLayer: function (feature, latlng) {
             
         },
@@ -227,7 +241,7 @@ $.ajax({url:'./data/load_thromde.php',
 
             });
             },
-    }).addTo(mymap);
+    });
     
     
 
@@ -246,6 +260,10 @@ $.ajax({url:'./data/load_geowg.php',
     success: function(response){
         jsngeowg = JSON.parse(response);
         geowg = L.geoJSON(jsngeowg, {
+
+        style:function(feature){
+            return {color: "gray", weight:"1", dashArray: "10",};
+        },
         pointToLayer: function (feature, latlng) {
             
         },
@@ -263,7 +281,7 @@ $.ajax({url:'./data/load_geowg.php',
 
             });
             },
-    }).addTo(mymap);
+    });
     
     
 
