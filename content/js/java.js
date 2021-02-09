@@ -50,10 +50,10 @@ $(document).ready(function(){
     
     lyrOutdoors = L.tileLayer.provider('Thunderforest.Outdoors');
     lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
-    lyrTopo = L.tileLayer.provider('OpenTopoMap');
+    lyrTopo = L.tileLayer.provider('Esri.WorldShadedRelief');
     lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
     lyrWatercolor = L.tileLayer.provider('Stamen.Watercolor');
-    mymap.addLayer(lyrOSM);
+    mymap.addLayer(lyrTopo);
 // Tower Marker
 
 geowgcentermarker = L.icon({
