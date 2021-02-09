@@ -104,7 +104,7 @@ geowgcentermarker = L.icon({
           jsnchiwog = JSON.parse(response);
           chiwog = L.geoJSON(jsnchiwog, {
               style:function(feature){
-                return {color: "black", weight:"0.1", dashArray: "0",};
+                return {color: "black", weight:"1", dashArray: "0",};
               },
             pointToLayer: function (feature, latlng) {
                 
