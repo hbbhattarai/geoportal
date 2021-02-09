@@ -104,7 +104,7 @@ geowgcentermarker = L.icon({
           jsnchiwog = JSON.parse(response);
           chiwog = L.geoJSON(jsnchiwog, {
               style:function(feature){
-                return {color: "black", weight:"1", dashArray: "0",};
+                return {color: "gray", weight:"1", dashArray: "0",};
               },
             pointToLayer: function (feature, latlng) {
                 
@@ -222,7 +222,7 @@ $.ajax({url:'./data/load_thromde.php',
         jsnthromde = JSON.parse(response);
         thromde = L.geoJSON(jsnthromde, {
         style:function(feature){
-            return {color: "black", weight:"1", dashArray: "1",};
+            return {color: "gray", weight:"1", dashArray: "1",};
             },
         pointToLayer: function (feature, latlng) {
             
